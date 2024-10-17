@@ -1,6 +1,7 @@
 *{
     margin: 0; 
     padding: 0;
+    font-family: "DM Sans", sans-serif;
 }
 
 body {
@@ -24,31 +25,42 @@ body {
 .logo {
     text-align: left;
 
-    font-family: "DM Sans", sans-serif;
-    font-size: 1em;
+
+    font-size: 18px;
     color: white;
+
+    margin: 15px;
 }
 
 .navigation a{
     color: white;
     text-decoration: none;
     text-align: center;
-    font-family: "DM Sans", sans-serif;
 
     display: inline-block;
     padding: 5px 20px;
     min-width:100px;
 }
 
+@media (max-width: 600px) {
+    .navigation a{
+        display: none;
+        transition: 0.5s;
+    }
+}
+
 .navigation a:hover {
     background-color: white;
     color: black;
+    border-radius: 70px;
+
+    transition: 0.5s;
 }
 
 .container_video {
     position: relative;
 
-    width: 100%;
+    height: 70vh;
     overflow: hidden;
 
     display:flex;
@@ -59,8 +71,14 @@ body {
 }
 
 .container_video video {
+    position: absolute; 
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
     width:100%;
-    height:auto;
+    height:100%;
 
     object-fit: cover;
     display: block;
@@ -78,16 +96,26 @@ body {
     height: 100%;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .overlay h1 {
-    font-family: "DM Sans", sans-serif;
     font-size: 5em;
     color: white;
 
     margin-bottom: 10px;
+
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }
 
 .overlay a {
-    font-family: "DM Sans", sans-serif;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -100,41 +128,100 @@ body {
     min-width:100px;
 
     margin-top: 0;
+    
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }
 
 .overlay a:hover {
     background-color: white;
     color: black;
+
+    transition: 0.5s;
 }
 
 .section2 {
     position:relative;
     background-color: white;
+
+    text-align: center;
 }
 
 .section2 h1{
-    font-family: "DM Sans", sans-serif;
     font-size: 3em;
 }
 
 .section3 {
-    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: black;
+
+    color:white; 
 }
 
-.section3 h1{
-    font-family: "DM Sans", sans-serif;
+.section3 h1{ 
     font-size: 3em;
+}
+
+.section3 iframe{
+    margin:30px;
+    transition: 0.3s ease-in-out;
+    opacity: 0.7;
+
+    transform-origin: center;
+}
+
+.section3 iframe:hover{
+    transform: scale(1.1);
+    opacity: 1;
+
+    transform-origin: center;
 }
 
 footer {
     background-color: black;
     color: white;
-    font-family: "DM Sans", sans-serif;
     font-size: 10px;
     text-align: center;
     width: 100%;
+}
 
-    position: fixed;
-    bottom: 0;
+.socialicons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialicons a {
+    text-decoration: none;
+    padding: 7px; 
+    background-color: white;
+    margin: 30px;
+    border-radius: 50%;
+}
+
+.socialicons a i {
+    font-size: 2em;
+    color:black;
+    opacity: 0.9;
+}
+
+.socialicons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialicons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.attribution {
+    margin: 5px;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: white;
 }
