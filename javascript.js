@@ -16,3 +16,19 @@ window.addEventListener('scroll', function () {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
+/* cookies popup */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const cookiesPopup = document.getElementById('cookies');
+    const acceptButton = document.getElementById('accept-cookies'); 
+
+    /* control if cookies have already been accepted */ 
+    if (!localStorage.getItem("cookiesAccepted")) {
+        cookiesPopup.style.display = "flex"; 
+    }
+
+    acceptButton.addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "true");
+        cookiesPopup.style.display = 'none'; 
+    });
+});
