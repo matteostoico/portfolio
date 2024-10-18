@@ -11,6 +11,7 @@ body {
 .header {
     width: 100%;
     background-color: black;
+    opacity: 0.8;
 
     display: flex;
     justify-content: space-between;
@@ -20,6 +21,9 @@ body {
     top: 0px;
 
     z-index: 1000;
+
+    backdrop-filter: blur(10px); /* sfocatura */
+    -webkit-backdrop-filter: blur(10px); /* compatibilità con Safari */
 }
 
 .logo {
