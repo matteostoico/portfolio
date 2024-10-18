@@ -40,7 +40,7 @@ body {
     min-width:45px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-device-width: 767px) {
     .navigation a{
         display: none;
     }
@@ -71,7 +71,7 @@ body {
     z-index: 1;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-device-width: 1439px) {
     .container_video {
         height: 100vh;
     }
