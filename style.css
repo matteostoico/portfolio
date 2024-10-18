@@ -10,8 +10,7 @@ body {
 
 .header {
     width: 100%;
-    background-color: black;
-    opacity: 0.8;
+    background-color: rgba(0,0,0,0.8); /* applicando l'opacità solo al colore di sfondo */
 
     display: flex;
     justify-content: space-between;
@@ -22,8 +21,8 @@ body {
 
     z-index: 1000;
 
-    backdrop-filter: blur(10px); /* sfocatura */
-    -webkit-backdrop-filter: blur(10px); /* compatibilità con Safari */
+    backdrop-filter: blur(8px); /* sfocatura */
+    -webkit-backdrop-filter: blur(8px); /* compatibilità con Safari */
 }
 
 .logo {
@@ -60,6 +59,10 @@ body {
     border-radius: 70px;
 
     transition: 0.5s;
+}
+
+.cta {
+    min-width: 15%;
 }
 
 .container_video {
@@ -158,6 +161,10 @@ body {
 }
 
 .section2 {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
     position:relative;
     background-color: white;
 
@@ -169,6 +176,7 @@ body {
 }
 
 .section3 {
+    height: 100vh;
     width: 100%;
     overflow: hidden; 
 
