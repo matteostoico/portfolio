@@ -23,14 +23,12 @@ body {
 }
 
 .logo {
-    text-align: left;
-
-
     font-size: 18px;
     color: white;
 
     margin: 15px;
 }
+
 
 .navigation a{
     color: white;
@@ -39,13 +37,16 @@ body {
 
     display: inline-block;
     padding: 5px 20px;
-    min-width:100px;
+    min-width:45px;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .navigation a{
         display: none;
-        transition: 0.5s;
+    }
+
+    .logo {
+        font-size: 12px;
     }
 }
 
@@ -70,9 +71,20 @@ body {
     z-index: 1;
 }
 
+@media screen and (max-width: 1439px) {
+    .container_video {
+        height: 100vh;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+}
+
 .container_video video {
     position: absolute; 
     
+    /* Making the video Responsive */
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -106,7 +118,8 @@ body {
 }
 
 .overlay h1 {
-    font-size: 5em;
+    font-size: 10vh;
+    text-align: center;
     color: white;
 
     margin-bottom: 10px;
@@ -154,7 +167,7 @@ body {
 .section3 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     background-color: black;
 
@@ -169,8 +182,10 @@ body {
     margin:30px;
     transition: 0.3s ease-in-out;
     opacity: 0.7;
+}
 
-    transform-origin: center;
+.section3 .box {
+    margin: 25px;
 }
 
 .section3 iframe:hover{
