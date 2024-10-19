@@ -32,3 +32,15 @@ document.addEventListener('DOMContentLoaded', function () {
         cookiesPopup.style.display = 'none'; 
     });
 });
+
+/* menu-button on smarthpones */ 
+
+document.getElementById('checkbtn').addEventListener('click', function () {
+    const header = document.querySelector('.header');
+    const logo = document.querySelector('.logo');
+    const checkbtn = document.querySelector('.checkbtn');
+    
+    header.classList.toggle('white');
+    logo.classList.toggle('black');
+    checkbtn.classList.toggle('black');
+});
