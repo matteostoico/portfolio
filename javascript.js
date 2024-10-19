@@ -33,6 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+/*Get Started button to section 2 */ 
+
+document.querySelector('startbtn').addEventListener("click", function(e) {
+    e.preventDefault(); 
+
+    const targetId = this.getAttribute('href'); 
+    const targetElement = document.querySelector('targetId');
+
+    targetElement.scrollIntoView({behavior: "smooth"});
+});
+
 /* menu-button on smarthpones */ 
 
 document.getElementById('checkbtn').addEventListener('click', function () {

@@ -31,6 +31,7 @@ body {
     height: 100vh;
     
     align-items: flex-start;
+    transition: 0.3s;
 }
 
 .logo {
@@ -201,14 +202,60 @@ body {
     width: 100%;
     overflow: hidden;
 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+
     position:relative;
     background-color: white;
+}
 
-    text-align: center;
+@media screen and (max-width: 767px) {
+    .section2 {
+        align-items: flex-start;
+        text-align: left;
+    }
 }
 
 .section2 h1{
     font-size: 3em;
+    margin: 2.5%; 
+}
+
+.section2 h2, h3{
+    margin: 2.5%;
+}
+
+.section2 a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 16px;
+
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 70px;
+    background-color: black;
+    min-width:80px;
+
+    /* fake border to avid animation errors */
+    border-color: none; 
+    border-style: solid; 
+
+    margin: 5%; 
+}
+
+.section2 a:hover{
+    color: black;
+    background-color: white; 
+
+    border-color: black;
+    border-style: solid;
+
+    transition: 0.3s;
 }
 
 .section3 {
