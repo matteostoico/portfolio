@@ -8,6 +8,52 @@ body {
     background-color: black;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+.fullscreenmenu {
+    display: none;
+
+    position: fixed; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(255,255,255,0.8);
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.menu-button {
+    min-width: 15%; 
+}
+
+.hamburger {
+    color: white;
+    float: right; 
+    font-size: 20px;
+    margin-right: 15px; 
+
+    cursor: pointer; 
+    
+    display: none; 
+}
+
+.hamburger.black {
+    color:black;
+}
+
+#checkbox {
+    display: none; 
+}
+
+@media screen and (max-width: 767px) {
+    .hamburger{
+        display: block; 
+    }
+}
+
 .header {
     width: 100%;
     background-color: rgba(0,0,0,0.8); /* applicando l'opacità solo al colore di sfondo */
@@ -26,11 +72,9 @@ body {
     -webkit-backdrop-filter: blur(8px); /* compatibilità con Safari */
 }
 
-.header.white{
+.header.white {
     background-color: rgba(255,255,255,0.8);
-    height: 100vh;
-    
-    align-items: flex-start;
+
     transition: 0.3s;
 }
 
@@ -71,35 +115,6 @@ body {
     border-radius: 70px;
 
     transition: 0.5s;
-}
-
-.menu {
-    min-width: 15%; 
-}
-
-.checkbtn {
-    color: white;
-    float: right; 
-    font-size: 20px;
-    margin-right: 15px; 
-
-    cursor: pointer; 
-    
-    display: none; 
-}
-
-.checkbtn.black {
-    color:black;
-}
-
-#check {
-    display: none; 
-}
-
-@media screen and (max-width: 767px) {
-    .checkbtn{
-        display: block; 
-    }
 }
 
 .container_video {

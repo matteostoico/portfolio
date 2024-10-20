@@ -35,23 +35,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /*Get Started button to section 2 */ 
 
-document.querySelector('startbtn').addEventListener("click", function(e) {
+document.getElementById('startbtn').addEventListener('click', function(e) {
     e.preventDefault(); 
 
-    const targetId = this.getAttribute('href'); 
-    const targetElement = document.querySelector('targetId');
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
 
-    targetElement.scrollIntoView({behavior: "smooth"});
+    targetElement.scrollIntoView({behavior: 'smooth'});
 });
 
 /* menu-button on smarthpones */ 
 
-document.getElementById('checkbtn').addEventListener('click', function () {
+window.addEventListener('load', function() {
+    const header = document.querySelector('.header');
+    const fullscreenMenu = document.querySelector('.fullscreenmenu');
+    
+    const headerHeight = header.offsetHeight;
+
+    fullscreenMenu.style.top = `${headerHeight}px`;
+});
+
+document.getElementById('checkbox').addEventListener('change', function () {
     const header = document.querySelector('.header');
     const logo = document.querySelector('.logo');
-    const checkbtn = document.querySelector('.checkbtn');
+    const hamburger = document.querySelector('.hamburger');
+    const fullscreenmenu = document.querySelector('.fullscreenmenu');
+    const body = document.querySelector('body');
+
     
     header.classList.toggle('white');
     logo.classList.toggle('black');
-    checkbtn.classList.toggle('black');
+    hamburger.classList.toggle('black');
+
+    if (fullscreenmenu.style.display === 'flex') {
+        fullscreenmenu.style.display = 'none';
+        body.classList.remove('no-scroll');
+    } else {
+        fullscreenmenu.style.display = 'flex';
+        body.classList.add('no-scroll');
+    }
 });
