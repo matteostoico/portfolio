@@ -33,6 +33,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+/* Overlay before accepting cookies */ 
+
+window.onload = function() {
+    let overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    document.body.appendChild(overlay);
+
+    document.body.classList.add('overlay-active'); /* preventing scroll */
+
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+
+        document.getElementById('overlay').style.display = 'none'; /* remove overlay */
+        document.body.classList.remove('overlay-active'); /* enable scrolling */
+    });
+
+}
+
 /*Get Started button to section 2 */ 
 
 document.getElementById('startbtn').addEventListener('click', function(e) {
@@ -50,7 +67,7 @@ window.addEventListener('load', function() {
     const header = document.querySelector('.header');
     const fullscreenMenu = document.querySelector('.fullscreenmenu');
     
-    const headerHeight = header.offsetHeight;
+    const headerHeight = header.offsetHeight; /* dinamically calculating the height of the navigation bar */
 
     fullscreenMenu.style.top = `${headerHeight}px`;
 });
@@ -63,15 +80,15 @@ document.getElementById('checkbox').addEventListener('change', function () {
     const body = document.querySelector('body');
 
     
-    header.classList.toggle('white');
-    logo.classList.toggle('black');
-    hamburger.classList.toggle('black');
+    header.classList.toggle('white'); /* changing the header color to white */
+    logo.classList.toggle('black'); /* changing the logo color to black */
+    hamburger.classList.toggle('black'); /* inserting the hamburger icon */
 
-    if (fullscreenmenu.style.display === 'flex') {
+    if (fullscreenmenu.style.display === 'flex') {  /* removing the fullscreen menu (starting from the end of the header) clicking on the hamburget */
         fullscreenmenu.style.display = 'none';
-        body.classList.remove('no-scroll');
+        body.classList.remove('no-scroll'); /* removing the scroll block */
     } else {
-        fullscreenmenu.style.display = 'flex';
-        body.classList.add('no-scroll');
+        fullscreenmenu.style.display = 'flex'; /* inserting the fullscreen menu (starting from the end of the header) clicking on the hamburger */
+        body.classList.add('no-scroll'); /* activating the scroll block */
     }
 });
